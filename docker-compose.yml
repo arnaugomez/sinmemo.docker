@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - "./db:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: secret
+      # user and db name is "postgres"
+    ports:
+      - "5416:5432"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
