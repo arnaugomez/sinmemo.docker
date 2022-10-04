@@ -5,7 +5,7 @@ services:
     volumes:
       - "./db:/var/lib/postgresql/data"
     environment:
-      POSTGRES_PASSWORD: secret
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       # user and db name is "postgres"
     ports:
       - "5416:5432"
